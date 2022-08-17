@@ -1,126 +1,144 @@
-<!DOCTYPE html>
-<html lang="jp">
-<!--サーバーに関するページ　試しに作ってみた-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>いろんなメモ</title>
-</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>色々メモ</title>
+<meta name="keywords" content="ページのキーワードA,B,C" />
+<meta name="description" content="ページの説明" />
 <link rel="stylesheet" href="index.css" type="text/css" />
+</head>
 <body>
-    <div id="header">
-        <h1>
-            メモ帳
-        </h1>
-    <p class="description">サーバーなどのメモとかいろいろ</p>
+<div id="outer">
+<div id="header"><div id="head-inner"><h1>メモ帳</h1>
+<p class="description">サーバーやdiscordのBOT等色々なメモ</p></div>
+</div>
+<div id="contents">
 
-    </div>
-    <h2 id="#hardware">サーバー本体の詳細
-    </h2>
-    <p>
-        Asrock Deskmini H470<br>
-        CPU:intel core i5 10400<br>
-        MEM:KLEVV DDR4 so-dimm 16GB×2<br>
-        SSD:Biostar S160-256GB<br>
-        OS:Proxmox VE 7.1<br>
-        Router:NEC IX2215
-    </p>
+<p>最終更新日:2022/8/17</p>
+<div class="side">
+    <ul>
+        <li><a href="#hardware">サーバー本体の詳細</a></li>
+        <li><a href="#discordbot">Discordのbotについて</a>
+            <ul>
+                <li><a href="#haiku">俳句BOT</a></li>
+                <li><a href="#serverbot">サーバー管理BOT</a></li>
+            </ul>
+        </li>
+        <li><a href="#mcserver">Minecraftのサーバー詳細</a>
+        <ul>
+            <li><a href="#creative">クリエイティブ鯖</a></li>
+            <li><a href="#survival">サバイバル鯖</a></li>
+            <li><a href="#proxy">プロキシサーバー</a></li>
+        </ul></li>
+    <li><a href="#backup">Minecraftのバックアップ、再起動について</a></li>
+    </ul>
+</div>
 
-    <h2 id="virtual server">仮想サーバーの詳細
-    </h2>
-    <h3>Minecraft クリエイティブ鯖用サーバー</h3>
-    <p>Ubuntu server 20.0.4 LTS</p>
+<h2 id="hardware">サーバー本体の詳細</h2>
+<p>
+    Asrock Deskmini H470<br>
+    CPU:intel core i5 10400<br>
+    MEM:KLEVV DDR4 so-dimm 16GB×2<br>
+    SSD:Biostar S160-256GB<br>
+    OS:Proxmox VE 7.1<br>
+    Router:NEC IX2215<br><br>
 
-    <h3>Minecraft サバイバル鯖用サーバー</h3>
-    <p>Ubuntu server 20.0.4 LTS</p>
+    proxmoxによる仮想サーバーを利用しています
+</p>
 
-    <h3>Discord用botなど色々</h3>
-    <p>Ubuntu 20.0.4 LTS</p>
+<h2 id="discordbot">Discordのbotについて
+</h2>
+<p>JMucicbot以外自作bot　欲しい方いたら連絡してね</p>
+<div style="margin:0px;padding:0px;" align="center">
+    <table width="98%" style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;"><tbody>
+        <tr><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">導入bot</th><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">説明</th></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;"><a href="https://github.com/Cosgy-Dev/JMusicBot-JP">Jmusicbot</a></td><td style="border:1px solid #000000;text-align:left;">youtubeやニコニコ動画の音声をdiscord通話に流す</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">俳句bot</td><td style="border:1px solid #000000;text-align:left;">謎俳句がいっぱい　手動更新</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">サーバー管理bot</td><td style="border:1px solid #000000;text-align:left;">昔はサーバーの起動用で用意してた<br>現在はminecraftサーバーアドレス表示したり適当なテスト用のbot</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">ニコ生放送通知bot</td><td style="border:1px solid #000000;text-align:left;">ニコ生の放送を検知したら通知<br><s>もう誰もニコ生で放送しない</s>動作が不安定なので停止中</td></tr>        </table>
+</div> <br>
 
-    <h2 id="discordbot">Discordのbotについて
-    </h2>
-    <div style="margin:0px;padding:0px;" align="center">
-        <table width="98%" style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;"><tbody>
-            <tr><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">導入bot</th><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">説明</th></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;"><a href="https://github.com/Cosgy-Dev/JMusicBot-JP">Jmusicbot</a></td><td style="border:1px solid #000000;text-align:left;">youtubeとかの動画を通話に流す</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">俳句bot</td><td style="border:1px solid #000000;text-align:left;">謎俳句がいっぱい</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">サーバー管理bot</td><td style="border:1px solid #000000;text-align:left;">昔はサーバーの起動用で用意してた<br>現在はサーバーアドレス表示する用のbot</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">ニコ生放送通知bot</td><td style="border:1px solid #000000;text-align:left;">ニコ生の放送を検知したら通知<br><s>もう誰もニコ生で放送しない</s>動作が不安定なので停止中</td></tr>        </table>
-    </div>
-    <br>
-
-    <h2 id="mcserver">Minecraftサーバーの詳細
-    </h2>
-    <p>共通禁止事項:故意にサーバーに負荷を与えて落とす行為、サーバーアドレスをDiscord外で公開する、その他ラインを超えた行為色々</p>
-    
-    <h3>クリエイティブ鯖</h3>
-    paper 1.18.1-194<br>
-    1.18.1 スーパーフラット クリエ,OP使用可能<br>
-    クリエ建築、ミニゲーム建築、ボートレース建築など好きにしていいよ<br>
-
-    <h4>導入プラグイン</h4>
-    <div style="margin:0px;padding:0px;" align="center">
-        <table width="98%" style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;"><tbody>
-            <tr><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">使用プラグイン</th><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">説明</th></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">SetHome</td><td style="border:1px solid #000000;text-align:left;">お家へテレポート</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">FastChunkPregenerator</td><td style="border:1px solid #000000;text-align:left;">チャンク事前生成</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">RecipeManager</td><td style="border:1px solid #000000;text-align:left;">カスタムレシピ追加</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">ViaBackwards</td><td style="border:1px solid #000000;text-align:left;">クライアントが鯖のバージョン以前でも入れるようにする</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">ViaVersion</td><td style="border:1px solid #000000;text-align:left;">クライアントが鯖のバージョン以降でも入れるようにする</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">worldguard</td><td style="border:1px solid #000000;text-align:left;">ワールド保護</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">spark</td><td style="border:1px solid #000000;text-align:left;">サーバー負荷の確認</td></tr></tbody>
-        </table>
-    </div>   <br>
-
-    <h3>サバイバル鯖</h3>
-    paper 1.18.1-194<br>
-    1.18.1 サバイバル<br>
-    BEROさんによる魔改造サバイバルが楽しめます<br>
-    <b>変なことやって鯖を落とさないようにね！！！！</b><br>
-
-    <h4>導入プラグイン</h4>
-    <div style="margin:0px;padding:0px;" align="center">
-        <table width="98%" style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;"><tbody>
-            <tr><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">使用プラグイン</th><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">説明</th></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">Dynmap</td><td style="border:1px solid #000000;text-align:left;">Web上に地図を表示する</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">FastAsyncWorldEdit</td><td style="border:1px solid #000000;text-align:left;">建築ツール</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">FastChunkPregenerator</td><td style="border:1px solid #000000;text-align:left;">チャンク事前生成</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">RecipeManager</td><td style="border:1px solid #000000;text-align:left;">カスタムレシピ追加</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">ViaBackwards</td><td style="border:1px solid #000000;text-align:left;">クライアントが鯖のバージョン以前でも入れるようにする</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">ViaVersion</td><td style="border:1px solid #000000;text-align:left;">クライアントが鯖のバージョン以降でも入れるようにする</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">worldguard</td><td style="border:1px solid #000000;text-align:left;">ワールド保護</td></tr>        
-            <tr><td style="border:1px solid #000000;text-align:left;">ServerBackup</td><td style="border:1px solid #000000;text-align:left;">サーバーのバックアップ</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">spark</td><td style="border:1px solid #000000;text-align:left;">サーバー負荷の確認</td></tr></tbody>
-        </table>
-    </div><br>
+<h3 id="haiku">俳句BOT</h3>
+<p>俳句BOTです　後で詳細書きます</p>
 
 
-    <h3>プロキシサーバー</h3>
-    velocity-3.1.2-SNAPSHOT-122<br>
-    クリエ鯖とサバイバル鯖間の橋掛けの役割<br>
 
-    <h4>導入プラグイン</h4>
-    <div style="margin:0px;padding:0px;" align="center">
-        <table width="98%" style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;"><tbody>
-            <tr><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">使用プラグイン</th><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">説明</th></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">LuckPerms</td><td style="border:1px solid #000000;text-align:left;">権限管理</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">TAB</td><td style="border:1px solid #000000;text-align:left;">タブリスト編集</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">Snap</td><td style="border:1px solid #000000;text-align:left;">Bungeecord用のプラグインをVelocityで使えるようにする</td></tr>
-            <tr><td style="border:1px solid #000000;text-align:left;">Lunachat</td><td style="border:1px solid #000000;text-align:left;">チャット共有(bungeecord用プラグイン)</td></tr>
-        </table>
-    </div><br>
+<h2 id="mcserver">Minecraftサーバーの詳細
+</h2>
+<p>共通禁止事項:故意にサーバーに負荷を与えて落とす行為、サーバーアドレスをDiscord外で公開する、その他ラインを超えた行為色々</p>
+
+<h3 id="creative">クリエイティブ鯖</h3>
+<img src="pic/cre.png" height=400 align="center"><br>
+PaperMC 1.19<br>
+スーパーフラット クリエ,OP使用可能<br>
+クリエ建築、ミニゲーム建築、ボートレース建築など好きにしていいよ<br>
+
+<h4>導入プラグイン</h4>
+<div style="margin:0px;padding:0px;" align="center">
+    <table width="98%" style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;"><tbody>
+        <tr><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">使用プラグイン</th><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">説明</th></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;"><s>SetHome</s></td><td style="border:1px solid #000000;text-align:left;"><s>お家へテレポート</s></td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">FastChunkPregenerator</td><td style="border:1px solid #000000;text-align:left;">チャンク事前生成</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">RecipeManager</td><td style="border:1px solid #000000;text-align:left;">カスタムレシピ追加</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">ViaBackwards</td><td style="border:1px solid #000000;text-align:left;">クライアントが鯖のバージョン以前でも入れるようにする</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">ViaVersion</td><td style="border:1px solid #000000;text-align:left;">クライアントが鯖のバージョン以降でも入れるようにする</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">worldguard</td><td style="border:1px solid #000000;text-align:left;">ワールド保護</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">spark</td><td style="border:1px solid #000000;text-align:left;">サーバー負荷の確認</td></tr></tbody>
+    </table>
+</div>   <br>
+
+<h3 id="survival">サバイバル鯖</h3>
+<img src="pic/sur.png" height=400 align="center"><br>
+PaperMC 1.19<br>
+基本的にサバイバル<br>
+BEROさんによる魔改造サバイバルが楽しめます<br>
+<b>変なことやって鯖を落とさないようにね！！！！</b><br>
+
+<h4>導入プラグイン</h4>
+<div style="margin:0px;padding:0px;" align="center">
+    <table width="98%" style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;"><tbody>
+        <tr><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">使用プラグイン</th><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">説明</th></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">Dynmap</td><td style="border:1px solid #000000;text-align:left;">Web上に地図を表示する</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">FastAsyncWorldEdit</td><td style="border:1px solid #000000;text-align:left;">建築ツール</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">FastChunkPregenerator</td><td style="border:1px solid #000000;text-align:left;">チャンク事前生成</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">RecipeManager</td><td style="border:1px solid #000000;text-align:left;">カスタムレシピ追加</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">ViaBackwards</td><td style="border:1px solid #000000;text-align:left;">クライアントが鯖のバージョン以前でも入れるようにする</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">ViaVersion</td><td style="border:1px solid #000000;text-align:left;">クライアントが鯖のバージョン以降でも入れるようにする</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">worldguard</td><td style="border:1px solid #000000;text-align:left;">ワールド保護</td></tr>        
+        <tr><td style="border:1px solid #000000;text-align:left;">ServerBackup</td><td style="border:1px solid #000000;text-align:left;">サーバーのバックアップ</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">spark</td><td style="border:1px solid #000000;text-align:left;">サーバー負荷の確認</td></tr></tbody>
+    </table>
+</div><br>
+<h3 id="proxy">プロキシサーバー</h3>
+Velocity<br>
+クリエ鯖とサバイバル鯖間の橋掛けの役割<br>
+
+<h4>導入プラグイン</h4>
+<div style="margin:0px;padding:0px;" align="center">
+    <table width="98%" style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;"><tbody>
+        <tr><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">使用プラグイン</th><th style="border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;">説明</th></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">LuckPerms</td><td style="border:1px solid #000000;text-align:left;">権限管理</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;"><s>TAB</s></td><td style="border:1px solid #000000;text-align:left;"><s>タブリスト編集</s><b>1.19対応したら導入する</b></td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">Snap</td><td style="border:1px solid #000000;text-align:left;">Bungeecord用のプラグインをVelocityで使えるようにする</td></tr>
+        <tr><td style="border:1px solid #000000;text-align:left;">Lunachat</td><td style="border:1px solid #000000;text-align:left;">チャット共有(bungeecord用プラグイン)</td></tr>
+    </table>
+</div><br>
+
+<h2 id="backup">Minecraftサーバーのバックアップ、再起動について
+</h2>
+<p>サバイバル鯖はAM4:00にバックアップを取得します 保存期間は3日間<br>
+    クリエ鯖はAM8:10頃に再起動<br>
+    サバイバル鯖はAM7:50頃に再起動<br>
+    プロキシサーバは毎週月曜日AM5:50に再起動<br>
+    再起動はそんなに時間もかからないのでしばらくお待ちください
+</p>
 
 
-    <h2 id="backup">Minecraftサーバーのバックアップ、再起動について
-    </h2>
-    <p>サバイバル鯖はAM4:00にバックアップを取得します 保存期間は3日間<br>
-        クリエ鯖はAM8:10頃に再起動<br>
-        サバイバル鯖はAM7:50頃に再起動<br>
-        プロキシサーバは毎週月曜日AM5:50に再起動<br>
-        再起動はそんなに時間もかからないのでしばらくお待ちください
-    </p>
-
-        何かあったら逐次更新<br>
-    </body>
+</div>
+<div id="footer"></div>
+</div></body>
 </html>
+
